@@ -1,0 +1,102 @@
+%contentfoooter {
+  font-size: 20px;
+  margin-top: 10px;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  justify-items: center;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+%foootergap {
+  display: grid;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+}
+.contentFooter {
+  @extend %contentfoooter;
+  &_blur {
+    filter: blur(8px);
+    @extend %contentfoooter;
+  }
+}
+.footergap {
+  align-content: flex-start;
+  grid-gap: 10px;
+  padding: 10px;
+  @extend %foootergap;
+  & .footergap_name {
+    font-size: 20px;
+  }
+}
+.footergap_content {
+  grid-gap: 20px;
+  margin-top: 30px;
+  @extend %foootergap;
+}
+.checkinput {
+  display: none;
+}
+
+li a {
+  color: dimgray;
+}
+
+@media (min-width: 1281px) {
+  .contentFooter_blur {
+    filter: blur(0);
+  }
+}
+
+@media (max-width: 765px) {
+  .footergap_content {
+    display: none;
+  }
+  .contentFooter {
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .contentFooter_blur {
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .checkinput:checked ~ .footergap_content {
+    margin-top: 15px;
+    font-size: 15px;
+    display: grid;
+    grid-gap: 20px;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .checkinput:checked ~ .footergap_name {
+    color: #0082e6;
+  }
+}
+
+@media (max-width: 320px) {
+  .footergap_content {
+    display: none;
+  }
+  .footergap {
+    font-size: 10px;
+    display: grid;
+    grid-gap: 20px;
+    text-align: center;
+    padding: 10px;
+    & .footergap_name {
+      font-size: 15px;
+    }
+  }
+  .checkinput:checked ~ .footergap_content {
+    font-size: 10px;
+    display: grid;
+    grid-gap: 20px;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .checkinput:checked ~ .footergap_name {
+    color: #0082e6;
+  }
+}
