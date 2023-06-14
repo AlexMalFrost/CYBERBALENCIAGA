@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.08fef19e.css",
+    "main.js": "/static/js/main.93d3efe5.js",
+    "static/js/787.0c883dd9.chunk.js": "/static/js/787.0c883dd9.chunk.js",
+    "static/media/22gait-ns2-mltpl-review12-0004.jpg": "/static/media/22gait-ns2-mltpl-review12-0004.20c73d562a2d8b406dd5.jpg",
+    "static/media/Yuan-Xin-Sci-Fi-7112690.jpg": "/static/media/Yuan-Xin-Sci-Fi-7112690.9a9d726d91252034bbba.jpg",
+    "static/media/1465335654_alessandro-giulianelli_sci-fi-female-character_4.jpg": "/static/media/1465335654_alessandro-giulianelli_sci-fi-female-character_4.8ea50cc4279eab188eb1.jpg",
+    "static/media/jpg": "/static/media/cc6f40ae7836a757d28b981c6f09cc5f.85ebc58039567c2ec152.jpg",
+    "index.html": "/index.html",
+    "main.08fef19e.css.map": "/static/css/main.08fef19e.css.map",
+    "main.93d3efe5.js.map": "/static/js/main.93d3efe5.js.map",
+    "787.0c883dd9.chunk.js.map": "/static/js/787.0c883dd9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.08fef19e.css",
+    "static/js/main.93d3efe5.js"
+  ]
+}
