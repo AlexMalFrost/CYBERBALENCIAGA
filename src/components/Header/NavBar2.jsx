@@ -49,19 +49,31 @@ const NavBar2 = ({ items, active, setActive }) => {
       <div className="navheader">
         <div className="checknavheader">
           <ul className="leftbox">
-            <li onMouseEnter={handleMouseOver1} onMouseLeave={handleMouseOut}>
+            <li
+              onMouseEnter={handleMouseOver1}
+              onMouseLeave={handleMouseOut}
+              onClick={handleMouseOver1}>
               <p className="navbar_p">new arrivials</p>
               <div>{car.new_arrivials && <NavDrop />}</div>
             </li>
-            <li onMouseEnter={handleMouseOver2} onMouseLeave={handleMouseOut}>
+            <li
+              onMouseEnter={handleMouseOver2}
+              onMouseLeave={handleMouseOut}
+              onClick={handleMouseOver2}>
               <p className="navbar_p">women</p>
               <div className="navdrophover">{car.women && <NavDrop women={car.women} />}</div>
             </li>
-            <li onMouseEnter={handleMouseOver3} onMouseLeave={handleMouseOut}>
+            <li
+              onMouseEnter={handleMouseOver3}
+              onMouseLeave={handleMouseOut}
+              onClick={handleMouseOver3}>
               <p className="navbar_p">man</p>
               <div className="navdrophover">{car.man && <NavDrop man={car.man} />}</div>
             </li>
-            <li onMouseEnter={handleMouseOver4} onMouseLeave={handleMouseOut}>
+            <li
+              onMouseEnter={handleMouseOver4}
+              onMouseLeave={handleMouseOut}
+              onClick={handleMouseOver4}>
               <p className="navbar_p">implants</p>
               <div className="navdrophover">
                 {car.implants && <NavDrop implants={car.implants} />}

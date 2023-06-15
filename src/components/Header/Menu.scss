@@ -47,6 +47,18 @@
     justify-items: center;
   }
 }
+@media (max-height: 652px) {
+  .menu_active {
+    height: 264px;
+    overflow-y: scroll;
+  }
+}
+@media (max-height: 408px) {
+  .menu_active {
+    height: 128px;
+    overflow-y: scroll;
+  }
+}
 @media (min-width: 1281px) {
   .menu_active {
     display: none;
