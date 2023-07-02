@@ -2,12 +2,15 @@ import React from 'react';
 import './Footer.scss';
 
 const Footer = ({ active }) => {
+  function scroll_to_bottom() {
+    window.scrollTo(0, document.body.scrollHeight, 'smooth');
+  }
   return (
     <div className={active ? 'contentFooter_blur' : 'contentFooter'}>
       <div className="footergap">
         <label>
           <input type="checkbox" className="checkinput" />
-          <div tabIndex="0" className="footergap_name">
+          <div tabIndex="0" className="footergap_name" onClick={() => scroll_to_bottom()}>
             CONNECT
           </div>
           <ul className="footergap_content">
@@ -37,7 +40,7 @@ const Footer = ({ active }) => {
       <div className="footergap">
         <label>
           <input type="checkbox" className="checkinput" />
-          <div tabIndex="0" className="footergap_name">
+          <div tabIndex="0" className="footergap_name" onClick={() => scroll_to_bottom()}>
             CORPORATE INFO
           </div>
           <ul className="footergap_content">
@@ -65,7 +68,7 @@ const Footer = ({ active }) => {
       <div className="footergap">
         <label>
           <input type="checkbox" className="checkinput" />
-          <div tabIndex="0" className="footergap_name">
+          <div tabIndex="0" className="footergap_name" onClick={() => scroll_to_bottom()}>
             HELP
           </div>
           <ul className="footergap_content">
@@ -99,7 +102,7 @@ const Footer = ({ active }) => {
       <div className="footergap">
         <label>
           <input type="checkbox" className="checkinput" />
-          <div tabIndex="0" className="footergap_name">
+          <div tabIndex="0" className="footergap_name" onClick={() => scroll_to_bottom()}>
             BECOME A MEMBER
           </div>
           <ul className="footergap_content">

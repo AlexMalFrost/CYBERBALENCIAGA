@@ -9,6 +9,12 @@
   height: 32px;
   @extend %navposition;
 }
+%navbarbox {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
 .navheader {
   width: 100%;
   z-index: 1;
@@ -19,13 +25,14 @@
   @extend %navposition;
 }
 .leftbox {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  text-transform: uppercase;
+  @extend %navbarbox;
+  padding-left: 10px;
+}
+.checknavheader {
+  z-index: 1;
 }
 .rightbox {
-  display: flex;
-  text-transform: uppercase;
+  @extend %navbarbox;
 }
 .navbar_p {
   color: rgb(203, 203, 203);
@@ -36,77 +43,44 @@
   cursor: pointer;
 }
 
-title.logo {
+.logo {
   display: inline-block;
   color: dimgray;
   text-shadow: 2px 1px 1px #332c2c;
   font-size: 32px;
   font-weight: bold;
-  transform: translateX(22%);
   cursor: pointer;
+}
+.centralbox {
+  transform: translatex(-10%);
 }
 
 .navbar_p:hover {
-  transition: 0.2s;
   color: #0082e6;
 }
 .checkbtn {
   font-size: 20px;
-  color: dimgray;
-  float: right;
   margin-left: 32px;
   cursor: pointer;
   display: none;
-  z-index: 1;
 }
-
 .searchbar {
-  z-index: 1;
   @extend %searchtemplate;
 }
 .searchbar_backposition {
   @extend %searchtemplate;
-  z-index: 0;
-}
-.searchinput {
-  margin-left: 12px;
-  width: 100%;
-  background: transparent;
-  color: #0082e6;
-  border: solid 1px rgb(70, 70, 70);
-  border-radius: 10px;
-  text-transform: uppercase;
-  background-color: transparent;
-}
-.logosvg {
-  width: 30px;
-  height: 30px;
-  margin-left: 10px;
-}
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  transition: background-color 5000s ease-in-out 10s;
-}
-input:-webkit-autofill {
-  -webkit-text-fill-color: #0082e6 !important;
-}
-.chosen_not_visible {
-  display: none;
 }
 .navdrophover {
   position: absolute;
   left: 0;
   width: 100%;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1346px) {
   .checkbtn {
     display: block;
   }
   .centralbox {
-    transform: translatex(-29%);
-    z-index: -1;
+    transform: translatex(-6%);
   }
   title.logo {
     font-size: 30px;
@@ -144,13 +118,6 @@ input:-webkit-autofill {
     margin-left: 20px;
   }
   .centralbox {
-    transform: translatex(-30%);
-    z-index: -1;
-  }
-}
-@media (min-width: 1281px) {
-  .centralbox {
-    margin-left: 0%;
-    transform: translateX(-31%);
+    transform: translatex(-6%);
   }
 }

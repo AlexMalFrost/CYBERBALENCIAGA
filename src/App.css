@@ -17,12 +17,19 @@
 }
 header {
   grid-area: header;
+  z-index: 2;
+}
+.searchinput {
+  position: absolute;
+  z-index: 2;
 }
 main {
   grid-area: main;
+  z-index: 1;
 }
 footer {
   grid-area: footer;
   height: 3px;
   background: dimgrey;
+  z-index: 3;
 }

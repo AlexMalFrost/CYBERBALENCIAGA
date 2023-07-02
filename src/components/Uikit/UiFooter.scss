@@ -1,0 +1,9 @@
+.contentUiFoooter {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+
+  position: sticky;
+}
+li {
+  padding: 30px;
+}

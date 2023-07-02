@@ -2,7 +2,7 @@
   font-size: 32px;
   margin-top: 128px;
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: auto;
   justify-items: center;
 }
 body {
@@ -41,7 +41,7 @@ img {
   cursor: pointer;
 }
 
-@media (min-width: 1281px) {
+@media (min-width: 1346px) {
   .contentGrid_blur {
     filter: blur(0);
   }
