@@ -1,8 +1,8 @@
 import './CyberContent.scss';
-import pic1 from '../assets/img/outfits/Yuan-Xin-Sci-Fi-7112690.jpg';
-import pic2 from '../assets/img/outfits/1465335654_alessandro-giulianelli_sci-fi-female-character_4.jpg';
-import pic3 from '../assets/img/implants/cc6f40ae7836a757d28b981c6f09cc5f.jpg';
-import pic4 from '../assets/img/outfits/22gait-ns2-mltpl-review12-0004.jpg';
+import pic1 from '../../assets/img/outfits/Yuan-Xin-Sci-Fi-7112690.jpg';
+import pic2 from '../../assets/img/outfits/1465335654_alessandro-giulianelli_sci-fi-female-character_4.jpg';
+import pic3 from '../../assets/img/implants/cc6f40ae7836a757d28b981c6f09cc5f.jpg';
+import pic4 from '../../assets/img/outfits/22gait-ns2-mltpl-review12-0004.jpg';
 
 const CyberContent = ({ active }) => {
   console.log('hhi');

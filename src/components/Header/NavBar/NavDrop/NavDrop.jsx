@@ -8,7 +8,7 @@ for (let val in data) {
     for (let val2 in data[val]) {
       for (let val3 in data[val][val2]) {
         for (let val4 in data[val][val2][val3]) {
-          if (val4 === 'new_arrivials' && data[val][val2][val3][val4] === true) {
+          if (val4 === 'new_arrivials' && data[val][val2][val3][val4]) {
             arr.push(data[val][val2][val3].title);
           }
         }
@@ -25,10 +25,10 @@ const navBarDrop = (variable) => {
   return localVariable;
 };
 
-const NavDrop = ({ women, man, implants }) => {
+export const NavDrop = ({ women, men, implants }) => {
   console.log('huhuhu');
   return (
-    <div className={man || women || implants ? 'navdrop_show' : 'navdrop_show_alter'}>
+    <div className={men || women || implants ? 'navdrop_show' : 'navdrop_show_alter'}>
       <div className="navdrop">
         <label>
           <div tabIndex="0" className="navdrop_name">
@@ -43,13 +43,13 @@ const NavDrop = ({ women, man, implants }) => {
           </ul>
         </label>
       </div>
-      <div className={man ? 'navdrop' : 'navdrop_notvisible'}>
+      <div className={men ? 'navdrop' : 'navdrop_notvisible'}>
         <label>
           <div tabIndex="0" className="navdrop_name">
-            man
+            men
           </div>
           <ul className="navdrop_content">
-            {navBarDrop(data[1].man).map((item) => (
+            {navBarDrop(data[1].men).map((item) => (
               <li key={item}>
                 <p className="navdrop_p">{item}</p>
               </li>

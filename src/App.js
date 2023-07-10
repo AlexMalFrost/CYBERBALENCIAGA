@@ -1,8 +1,8 @@
-import NavBar2 from './components/Header/NavBar2';
-import Menu from './components/Header/Menu';
+import NavBar2 from './components/Header/NavBar/NavBar2';
+import Menu from './components/Header/Menu/Menu';
 import { useState } from 'react';
 import React from 'react';
-import CyberContent from './components/Content/cyberContent';
+import CyberContent from './pages/Home/cyberContent';
 import './App.css';
 import Footer from './components/Footer/Footer';
 import FooterMob from './components/Footer/FooterMob';

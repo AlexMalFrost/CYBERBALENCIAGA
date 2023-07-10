@@ -4,53 +4,53 @@
       {
         "title": "hand implants",
         "new_arrivials": true,
-        "man": true,
+        "men": true,
         "women": true,
         "prosthesis": true
       },
       {
         "title": "leg implants",
         "new_arrivials": true,
-        "man": true,
+        "men": true,
         "women": true,
         "prosthesis": true
       },
       {
         "title": "torso implants",
         "new_arrivials": false,
-        "man": true,
+        "men": true,
         "women": true,
         "prosthesis": true
       },
       {
         "title": "head implants",
         "new_arrivials": false,
-        "man": true,
+        "men": true,
         "women": true,
         "prosthesis": true
       }
     ]
   },
   {
-    "man": [
+    "men": [
       {
         "title": "t-shirts",
         "new_arrivials": true,
-        "man": true,
+        "men": true,
         "women": false,
         "implants": false
       },
       {
         "title": "sportswear",
         "new_arrivials": false,
-        "man": true,
+        "men": true,
         "women": false,
         "implants": false
       },
       {
         "title": "hoodies",
         "new_arrivials": false,
-        "man": true,
+        "men": true,
         "women": false,
         "implants": false
       }
@@ -61,21 +61,21 @@
       {
         "title": "dresses",
         "new_arrivials": true,
-        "man": false,
+        "men": false,
         "women": true,
         "implants": false
       },
       {
         "title": "skirts",
         "new_arrivials": false,
-        "man": false,
+        "men": false,
         "women": true,
         "implants": false
       },
       {
         "title": "blazers",
         "new_arrivials": false,
-        "man": false,
+        "men": false,
         "women": true,
         "implants": false
       }
