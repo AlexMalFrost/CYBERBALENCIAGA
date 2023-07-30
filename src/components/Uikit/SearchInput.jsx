@@ -1,10 +1,13 @@
 import React from 'react';
 import './Searchinput.scss';
+import { useSelector } from 'react-redux';
+import { selectWindowSize } from '../../redux/reducers/windowSize';
 
-const SearchInput = ({ active }) => {
+const SearchInput = () => {
+  const windowSize = useSelector(selectWindowSize);
   return (
     <>
-      <div className={active ? 'uisearchcomponent_blur' : 'uisearchcomponent'}>
+      <div className={windowSize ? 'uisearchcomponent_blur' : 'uisearchcomponent'}>
         <svg
           className="uilogosvg"
           height="32px"

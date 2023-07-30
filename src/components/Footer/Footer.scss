@@ -23,6 +23,10 @@
   @extend %foootergap;
   & .footergap_name {
     font-size: 20px;
+    &_blue {
+      color: #0082e6;
+      font-size: 20px;
+    }
   }
 }
 .footergap_content {
@@ -53,9 +57,6 @@
     row-gap: 20px;
     padding-bottom: 20px;
   }
-  .checkinput:checked ~ .footergap_name {
-    color: #0082e6;
-  }
 }
 @media (max-width: 320px) {
   .footergap_content {
@@ -64,6 +65,9 @@
   .footergap {
     & .footergap_name {
       font-size: 15px;
+      &_blue {
+        font-size: 15px;
+      }
     }
   }
 }

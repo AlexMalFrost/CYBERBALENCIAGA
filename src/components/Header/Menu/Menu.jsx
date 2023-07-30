@@ -1,14 +1,21 @@
 import React from 'react';
 import './Menu.scss';
+import dataNav from '../../../assets/datamNav.json';
+import { useSelector, useDispatch } from 'react-redux';
+import { setWindowSize, selectWindowSize } from '../../../redux/reducers/windowSize';
 
-const Menu = ({ items, active, setActive }) => {
+const Menu = () => {
+  const windowSize = useSelector(selectWindowSize);
+  const dispatch = useDispatch();
   return (
-    <div className={active ? 'menu_active' : 'menu'} onClick={() => setActive(false)}>
+    <div
+      className={windowSize ? 'menu_active' : 'menu'}
+      onClick={() => dispatch(setWindowSize(false))}>
       <ul className="ul_menu_header" onClick={(e) => e.stopPropagation()}>
-        {items.map((item) => (
-          <li className="li_menu_header" key={item.value}>
-            <a className="a_menu_header" onClick={() => setActive(false)}>
-              {item.value}
+        {dataNav['iitems'].map((item) => (
+          <li className="li_menu_header" key={item}>
+            <a className="a_menu_header" onClick={() => dispatch(setWindowSize(false))}>
+              {item}
             </a>
           </li>
         ))}
