@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/CYBERBALENCIAGA/static/css/main.15e3b021.css",
-    "main.js": "/CYBERBALENCIAGA/static/js/main.bb85a980.js",
+    "main.css": "/CYBERBALENCIAGA/static/css/main.b28943d7.css",
+    "main.js": "/CYBERBALENCIAGA/static/js/main.ca4aeffe.js",
     "static/css/24.cc43d0d8.chunk.css": "/CYBERBALENCIAGA/static/css/24.cc43d0d8.chunk.css",
-    "static/js/24.0ec8cda1.chunk.js": "/CYBERBALENCIAGA/static/js/24.0ec8cda1.chunk.js",
+    "static/js/24.2cfc4fad.chunk.js": "/CYBERBALENCIAGA/static/js/24.2cfc4fad.chunk.js",
     "static/js/787.0c883dd9.chunk.js": "/CYBERBALENCIAGA/static/js/787.0c883dd9.chunk.js",
     "index.html": "/CYBERBALENCIAGA/index.html",
-    "main.15e3b021.css.map": "/CYBERBALENCIAGA/static/css/main.15e3b021.css.map",
-    "main.bb85a980.js.map": "/CYBERBALENCIAGA/static/js/main.bb85a980.js.map",
+    "main.b28943d7.css.map": "/CYBERBALENCIAGA/static/css/main.b28943d7.css.map",
+    "main.ca4aeffe.js.map": "/CYBERBALENCIAGA/static/js/main.ca4aeffe.js.map",
     "24.cc43d0d8.chunk.css.map": "/CYBERBALENCIAGA/static/css/24.cc43d0d8.chunk.css.map",
-    "24.0ec8cda1.chunk.js.map": "/CYBERBALENCIAGA/static/js/24.0ec8cda1.chunk.js.map",
+    "24.2cfc4fad.chunk.js.map": "/CYBERBALENCIAGA/static/js/24.2cfc4fad.chunk.js.map",
     "787.0c883dd9.chunk.js.map": "/CYBERBALENCIAGA/static/js/787.0c883dd9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.15e3b021.css",
-    "static/js/main.bb85a980.js"
+    "static/css/main.b28943d7.css",
+    "static/js/main.ca4aeffe.js"
   ]
 }
