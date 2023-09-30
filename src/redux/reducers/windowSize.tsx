@@ -1,10 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+type windowSizeState = {
+  value: boolean;
+};
+
+const initialState: windowSizeState = {
+  value: false,
+};
+
 export const windowSizeSlice = createSlice({
   name: 'windowsize',
-  initialState: {
-    value: false,
-  },
+  initialState,
   reducers: {
     setWindowSize: (state, action) => {
       state.value = action.payload;
@@ -13,7 +19,5 @@ export const windowSizeSlice = createSlice({
 });
 
 export const { setWindowSize } = windowSizeSlice.actions;
-
-export const selectWindowSize = (state) => state.windowsize.value;
 
 export default windowSizeSlice.reducer;

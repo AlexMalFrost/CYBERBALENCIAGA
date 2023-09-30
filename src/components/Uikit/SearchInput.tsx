@@ -1,10 +1,9 @@
-import React from 'react';
 import './Searchinput.scss';
 import { useSelector } from 'react-redux';
-import { selectWindowSize } from '../../redux/reducers/windowSize';
+import { winSatte } from '../../redux/reducers';
 
 const SearchInput = () => {
-  const windowSize = useSelector(selectWindowSize);
+  const windowSize = useSelector((state: winSatte) => state.windowsize.value);
   return (
     <>
       <div className={windowSize ? 'uisearchcomponent_blur' : 'uisearchcomponent'}>

@@ -4,7 +4,7 @@ import windowSizeReducer from './reducers/windowSize';
 
 export default configureStore({
   reducer: {
-    counter: counterReducer,
+    navdropswitcher: counterReducer,
     windowsize: windowSizeReducer,
   },
 });

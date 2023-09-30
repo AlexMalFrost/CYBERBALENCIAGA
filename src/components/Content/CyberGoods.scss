@@ -1,0 +1,62 @@
+@import 'CyberContent';
+
+.goodsGrid1 {
+  @extend %coontentgrid;
+  grid-template-columns: auto auto auto;
+}
+.image_goods {
+  @extend %contentgrid1;
+  width: 32vw;
+  max-height: 520px;
+  border-radius: 10px;
+  padding: 0%;
+}
+.goodsGrid_blur {
+  filter: blur(8px);
+}
+.goods_up {
+  text-align: center;
+  display: grid;
+  grid-template-columns: auto;
+  margin: 6px;
+  object-fit: cover;
+}
+.goodstext {
+  margin-top: 16px;
+  margin-bottom: 22px;
+}
+@media (max-width: 1025px) {
+  .goodstext {
+    font-size: 2vw;
+  }
+  .image_goods {
+    width: 31vw;
+  }
+}
+@media (max-width: 769px) {
+  .goodstext {
+    font-size: 3vw;
+  }
+  .goodsGrid1 {
+    grid-template-columns: auto auto;
+  }
+  .image_goods {
+    width: 46vw;
+  }
+}
+@media (max-width: 545px) {
+  .goodstext {
+    font-size: 3vw;
+  }
+}
+@media (max-width: 426px) {
+  .goodstext {
+    font-size: 4vw;
+  }
+  .goodsGrid1 {
+    grid-template-columns: auto;
+  }
+  .image_goods {
+    width: 100%;
+  }
+}

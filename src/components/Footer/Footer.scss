@@ -2,6 +2,7 @@
   margin-top: 4px;
   padding-top: 3%;
   display: grid;
+  width: 100%;
   grid-template-columns: auto auto auto auto;
   background-color: white;
 }
@@ -31,6 +32,7 @@
 }
 .footergap_content {
   margin-top: 25px;
+  padding-left: 0%;
 }
 .checkinput {
   display: none;
@@ -51,8 +53,15 @@
   .footergap_content {
     display: grid;
     cursor: pointer;
+    position: relative;
   }
   .contentFooter {
+    grid-template-columns: auto;
+    row-gap: 20px;
+    padding-bottom: 20px;
+  }
+  .contentFooter_blur {
+    filter: blur(8px);
     grid-template-columns: auto;
     row-gap: 20px;
     padding-bottom: 20px;
@@ -61,6 +70,12 @@
 @media (max-width: 320px) {
   .footergap_content {
     font-size: 10px;
+  }
+  .contentFooter_blur {
+    filter: blur(8px);
+    grid-template-columns: auto;
+    row-gap: 20px;
+    padding-bottom: 20px;
   }
   .footergap {
     & .footergap_name {

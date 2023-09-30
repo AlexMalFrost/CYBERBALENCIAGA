@@ -1,30 +1,31 @@
 %coontentgrid {
-  font-size: 32px;
+  font-size: 1.4vw;
   margin-top: 128px;
   display: grid;
-  grid-template-columns: auto;
   justify-items: center;
-}
-body {
-  min-height: 100vh;
   background: #222327;
   color: dimgray;
   font-family: 'Times New Roman', Times, serif;
   background-color: white;
 }
-.contentGrid_blur {
-  @extend %coontentgrid;
-  filter: blur(8px);
-}
-.contentGrid {
-  @extend %coontentgrid;
-}
-.contentGrid1 {
+%contentgrid1 {
   display: flex;
   width: 100%;
   justify-content: space-between;
 }
-img {
+.contentGrid_blur {
+  @extend %coontentgrid;
+  grid-template-columns: auto;
+  filter: blur(8px);
+}
+.contentGrid {
+  @extend %coontentgrid;
+  grid-template-columns: auto;
+}
+.contentGrid1 {
+  @extend %contentgrid1;
+}
+.image_content {
   display: flex;
   justify-items: center;
   object-fit: cover;
@@ -32,8 +33,8 @@ img {
   max-height: 1024px;
 }
 .grid-text {
+  font-size: 2.2vw;
   display: flex;
-  justify-content: center;
   align-items: center;
   margin-left: 32px;
   margin-right: 32px;
@@ -47,24 +48,26 @@ img {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   .contentGrid {
-    font-size: 22px;
     margin-top: 128px;
   }
   .contentGrid_blur {
-    font-size: 22px;
     margin-top: 128px;
+  }
+  .grid-text {
+    font-size: 18px;
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 426px) {
   .contentGrid {
-    font-size: 16px;
     margin-top: 128px;
   }
   .contentGrid_blur {
-    font-size: 16px;
     margin-top: 128px;
+  }
+  .grid-text {
+    font-size: 4vw;
   }
 }

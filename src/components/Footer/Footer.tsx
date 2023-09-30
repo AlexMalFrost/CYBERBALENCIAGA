@@ -1,13 +1,12 @@
-import React from 'react';
 import './Footer.scss';
-import { useSelector } from 'react-redux';
-import { selectWindowSize } from '../../redux/reducers/windowSize';
 import dataNav from '../../assets/datamNav.json';
+import { useSelector } from 'react-redux';
+import { winSatte } from '../../redux/reducers';
 
 const Footer = () => {
-  const windowSize = useSelector(selectWindowSize);
+  const windowSize = useSelector((state: winSatte) => state.windowsize.value);
   function scroll_to_bottom() {
-    window.scrollTo(0, document.body.scrollHeight, 'smooth');
+    window.scrollTo(0, document.body.scrollHeight);
   }
   return (
     <div className={windowSize ? 'contentFooter_blur' : 'contentFooter'}>
@@ -15,8 +14,8 @@ const Footer = () => {
         <div className="footergap" key={item.field}>
           <label>
             <input type="checkbox" className="checkinput" />
-            <div tabIndex="0" className="footergap_name" onClick={() => scroll_to_bottom()}>
-              {item.field}
+            <div tabIndex={0} className="footergap_name" onClick={() => scroll_to_bottom()}>
+              <div className="footergap_value">{item.field}</div>
             </div>
             <ul className="footergap_content">
               {item.details.map((item) => (
