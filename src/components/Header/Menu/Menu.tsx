@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowTurnRight } from '@fortawesome/free-solid-svg-icons';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { winSatte } from '../../../redux/reducers';
+import { setSearch } from '../../../redux/reducers/searchReducer';
 
 const Menu: React.FC = () => {
   const [see, setNotSee] = React.useState(true);
@@ -24,7 +25,8 @@ const Menu: React.FC = () => {
     dispatch(changeNavDropState(item));
     setNotSee(false);
   };
-  const handleMenuOverNow = () => {
+  const handleMenuOverNow = (e: string) => {
+    dispatch(setSearch(e));
     setNotSee(false);
     dispatch(changeNavDropState('none'));
     dispatch(setWindowSize(false));
@@ -96,8 +98,8 @@ const Menu: React.FC = () => {
                             }>
                             {dataNavB[val].map((item: string) => (
                               <li key={item} className="li_menu_header">
-                                <Link to={`/CYBERBALENCIAGA/${item}`}>
-                                  <p className="menu_p" onClick={() => handleMenuOverNow()}>
+                                <Link to={`/CYBERBALENCIAGA/content`}>
+                                  <p className="menu_p" onClick={() => handleMenuOverNow(item)}>
                                     {item.replace('_', ' ')}
                                   </p>
                                 </Link>

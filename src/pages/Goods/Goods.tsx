@@ -1,6 +1,5 @@
 import NavBar from '../../components/Header/NavBar/NavBar';
 import Menu from '../../components/Header/Menu/Menu';
-import React from 'react';
 import FooterMain from '../../components/Footer/FooterMain';
 import Searchinput from '../../components/Uikit/SearchInput';
 import CyberGoods from '../../components/Content/cyberGoods';

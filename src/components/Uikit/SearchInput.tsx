@@ -1,11 +1,118 @@
 import './Searchinput.scss';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { winSatte } from '../../redux/reducers';
+import React from 'react';
+import { setSearch } from '../../redux/reducers/searchReducer';
+import { setSwitcher } from '../../redux/reducers/searchSwitcher';
+import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const SearchInput = () => {
   const windowSize = useSelector((state: winSatte) => state.windowsize.value);
+  const [searchData, setSearchData] = React.useState([]);
+  const dispatch = useDispatch();
+  const [query, setQuery] = React.useState('');
+  const [slide, setSlide] = React.useState(0);
+  const [searchSize, setSearchSize] = React.useState(2);
+
+  React.useEffect(() => {
+    if (window.innerWidth < 426) {
+      setSearchSize(2);
+    } else if (window.innerWidth > 769) {
+      setSearchSize(4);
+    } else if (window.innerWidth > 426) {
+      setSearchSize(3);
+    }
+  }, [window.innerWidth]);
+
+  const sliderLeft = () => {
+    if (slide > 0) {
+      setSlide(slide - 1);
+    }
+  };
+
+  const sliderRight = () => {
+    if (slide + 1 < Object.keys(searchData).length - (searchSize - 1)) {
+      setSlide(slide + 1);
+    }
+  };
+
+  React.useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      async function fetchPizza() {
+        try {
+          const searchh = query ? `&search=${query}` : '';
+          if (query) {
+            const { data } = await axios.get(
+              `https://6429b940ebb1476fcc4f9b86.mockapi.io/items?${searchh}`,
+            );
+            setSearchData(data);
+          }
+        } catch (error) {
+          alert('Ошибка при получении данных!');
+        }
+      }
+
+      fetchPizza();
+    }, 700);
+    return () => clearTimeout(timeoutId);
+  }, [query]);
+
+  function updateSearchValue(str: string) {
+    dispatch(setSearch(str));
+    console.log(str);
+    setQuery('');
+  }
+
+  function handleSearch(e: React.ChangeEvent<HTMLInputElement>) {
+    setSearchData([]);
+    setQuery(e.target.value);
+    dispatch(setSwitcher(true));
+  }
   return (
     <>
+      {query ? (
+        <div className="searchBox">
+          <label>
+            <ul className="ul_search_content">
+              {Object.keys(searchData).length > searchSize ? (
+                <button type="button" className="search_arrow_button" onClick={() => sliderLeft()}>
+                  <FontAwesomeIcon icon={faPlay} className="search_icon_navdrop" rotation={180} />
+                </button>
+              ) : (
+                <></>
+              )}
+              <div className="search_result">
+                {searchData.slice(slide, slide + searchSize).map((item: any) => (
+                  <li key={item.value}>
+                    <div className="search_image">
+                      <img className="search_image_result" src={item.link} alt="Link" />
+                    </div>
+                    <Link to={`/CYBERBALENCIAGA/content`}>
+                      <div
+                        className="search_text_result"
+                        onClick={() => updateSearchValue(item.value)}>
+                        {item.value}
+                      </div>
+                    </Link>
+                  </li>
+                ))}
+              </div>
+              {Object.keys(searchData).length > searchSize ? (
+                <button type="button" className="search_arrow_button" onClick={() => sliderRight()}>
+                  <FontAwesomeIcon className="search_icon_navdrop" icon={faPlay} />
+                </button>
+              ) : (
+                <></>
+              )}
+            </ul>
+          </label>
+        </div>
+      ) : (
+        <></>
+      )}
       <div className={windowSize ? 'uisearchcomponent_blur' : 'uisearchcomponent'}>
         <svg
           className="uilogosvg"
@@ -23,7 +130,14 @@ const SearchInput = () => {
             </g>
           </g>
         </svg>
-        <input type="search" id="site-search" className="uisearchinput" placeholder="    Search" />
+        <input
+          type="text"
+          value={query}
+          id="site-search"
+          className="uisearchinput"
+          placeholder="    Search"
+          onChange={handleSearch}
+        />
       </div>
     </>
   );

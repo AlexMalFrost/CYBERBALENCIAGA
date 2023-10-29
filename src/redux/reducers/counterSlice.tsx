@@ -7,8 +7,8 @@ type navDropSwitcherState = {
 const initialState: navDropSwitcherState = {
   value: 'none',
 };
-export const navDropSwitcherSlice = createSlice({
-  name: 'counter',
+const navDropSwitcherSlice = createSlice({
+  name: 'navDropSwitcher',
   initialState,
   reducers: {
     changeNavDropState: (state, action) => {

@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { changeNavDropState } from '../../../../redux/reducers/counterSlice';
 import { useDispatch } from 'react-redux';
+import { setSearch } from '../../../../redux/reducers/searchReducer';
+import { setSwitcher } from '../../../../redux/reducers/searchSwitcher';
 
 type NavDropProps = {
   prop: string;
@@ -30,6 +32,12 @@ export const NavDrop: React.FC<NavDropProps> = ({ prop }) => {
     }
   };
 
+  function navDropSearchValue(item: string) {
+    dispatch(setSearch(item));
+    dispatch(setSwitcher(false));
+    changeNavDropState(item);
+  }
+
   return (
     <div className="navBarDropBar">
       {Object.keys(dataNavB).map((val: string) => (
@@ -44,8 +52,8 @@ export const NavDrop: React.FC<NavDropProps> = ({ prop }) => {
                 </button>
                 {dataNavB[val].slice(slide, slide + 5).map((item) => (
                   <li key={item}>
-                    <Link to={`/CYBERBALENCIAGA/${item}`}>
-                      <p className="navdrop_p" onClick={() => dispatch(changeNavDropState(item))}>
+                    <Link to={`/CYBERBALENCIAGA/content`}>
+                      <p className="navdrop_p" onClick={() => navDropSearchValue(item)}>
                         {item.replace('_', ' ')}
                       </p>
                     </Link>

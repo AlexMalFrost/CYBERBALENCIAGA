@@ -23,7 +23,7 @@ function App() {
         <Route path="/CYBERBALENCIAGA" element={<Home />} />
       </Route>
       <Route
-        path="/CYBERBALENCIAGA/dresses"
+        path="/CYBERBALENCIAGA/content"
         element={
           <Suspense fallback={<p>Loading...</p>}>
             <Goods />

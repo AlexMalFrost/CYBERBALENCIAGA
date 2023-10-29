@@ -109,41 +109,35 @@ ul::-webkit-scrollbar {
     }
   }
   .ul_menu_header {
-    max-height: 480px;
+    max-height: 482px;
     overflow-y: scroll;
   }
 }
 
 @media (max-height: 663px) {
   .ul_menu_header {
-    max-height: 380px;
+    max-height: 348px;
   }
 }
 
 @media (max-height: 572px) {
-  .ul_menu_header {
-    max-height: 310px;
-  }
-}
-
-@media (max-height: 495px) {
   .ul_menu_header {
     max-height: 264px;
   }
 }
 @media (max-height: 438px) {
   .ul_menu_header {
-    max-height: 198px;
+    max-height: 188px;
   }
 }
-@media (max-height: 351px) {
+@media (max-height: 370px) {
   .ul_menu_header {
     max-height: 108px;
   }
 }
-@media (max-height: 268px) {
+@media (max-height: 284px) {
   .ul_menu_header {
-    max-height: 68px;
+    max-height: 48px;
   }
 }
 @media (max-width: 376px) {

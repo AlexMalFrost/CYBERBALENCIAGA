@@ -8,6 +8,7 @@ import { setWindowSize } from '../../../redux/reducers/windowSize';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { winSatte } from '../../../redux/reducers';
+import { setSwitcher } from '../../../redux/reducers/searchSwitcher';
 
 import './NavBar.scss';
 
@@ -34,6 +35,10 @@ const NavBar = () => {
       clearTimeout(timerRef.current);
     }
     dispatch(changeNavDropState(''));
+  };
+
+  const searchSwitcherHeader = () => {
+    dispatch(setSwitcher(false));
   };
 
   React.useEffect(() => {
@@ -65,7 +70,7 @@ const NavBar = () => {
         </div>
         <div className="centralbox">
           <Link to="/CYBERBALENCIAGA">
-            <title className="logo" title="CYBERBALENCIAGA">
+            <title className="logo" title="CYBERBALENCIAGA" onClick={searchSwitcherHeader}>
               CYBERBALENCIAGA
             </title>
           </Link>

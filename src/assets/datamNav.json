@@ -1,61 +1,59 @@
 {
   "iitems": ["new arrivals", "women", "men", "implants", "basket", "prosthesis repair", "login"],
-  "ytems": ["new_arrivals", "women", "men", "implants", "basket", "prosthesis repair", "login"],
-  "numbertems": [0, 1, 2, 3],
-  "itemms": [
-    { "value": "new arrivals", "href": "/" },
-    { "value": "women", "href": "/" },
-    { "value": "men", "href": "/" },
-    { "value": "implants", "href": "/" },
-    { "value": "basket", "href": "/" },
-    { "value": "prosthesis repair", "href": "/" },
-    { "value": "login", "href": "/" }
-  ],
-  "goods": [
+  "dresses": [
     {
       "value": "Cyber fighter gloves",
       "link": "https://raw.githubusercontent.com/AlexMalFrost/CYBERBALENCIAGA/cyber-balenciaga-files/goods/strangemask.png",
-      "price": "99$"
+      "price": "99$",
+      "category": "dress"
     },
     {
       "value": "Classic nano vest",
       "link": "https://raw.githubusercontent.com/AlexMalFrost/CYBERBALENCIAGA/cyber-balenciaga-files/goods/deus_ex_human_revolution_shariff.png",
-      "price": "19$"
+      "price": "19$",
+      "category": "dress"
     },
     {
       "value": "Adaptive bulletproof dress",
       "link": "https://raw.githubusercontent.com/AlexMalFrost/CYBERBALENCIAGA/cyber-balenciaga-files/goods/kiberpank_obraz-1.png",
-      "price": "39$"
+      "price": "39$",
+      "category": "dress"
     },
     {
       "value": "Adaptive bag",
       "link": "https://raw.githubusercontent.com/AlexMalFrost/CYBERBALENCIAGA/cyber-balenciaga-files/goods/19-sam-nut-1.png",
-      "price": "9$"
+      "price": "9$",
+      "category": "outfit"
     },
     {
       "value": "Ronin style",
       "link": "https://raw.githubusercontent.com/AlexMalFrost/CYBERBALENCIAGA/cyber-balenciaga-files/goods/neurona-2.png",
-      "price": "40$"
+      "price": "40$",
+      "category": "outfit"
     },
     {
-      "value": "Prostetic jacket",
+      "value": "Prostetic cyberware",
       "link": "https://raw.githubusercontent.com/AlexMalFrost/CYBERBALENCIAGA/cyber-balenciaga-files/goods/13-suzi-kam-1.png",
-      "price": "17$"
+      "price": "17$",
+      "category": "outfit"
     },
     {
       "value": "Genom food",
       "link": "https://raw.githubusercontent.com/AlexMalFrost/CYBERBALENCIAGA/cyber-balenciaga-files/goods/ellie-smith-1.png",
-      "price": "35$"
+      "price": "35$",
+      "category": "implant"
     },
     {
       "value": "XRay vision",
       "link": "https://raw.githubusercontent.com/AlexMalFrost/CYBERBALENCIAGA/cyber-balenciaga-files/goods/jemma-mac-1.png",
-      "price": "55$"
+      "price": "55$",
+      "category": "implant"
     },
     {
       "value": "Face lifting",
       "link": "https://raw.githubusercontent.com/AlexMalFrost/CYBERBALENCIAGA/cyber-balenciaga-files/goods/yamato-ronin-1.png",
-      "price": "5$"
+      "price": "5$",
+      "category": "implant"
     }
   ],
   "datam": {

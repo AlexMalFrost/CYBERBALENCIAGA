@@ -8,7 +8,7 @@ const initialState: windowSizeState = {
   value: false,
 };
 
-export const windowSizeSlice = createSlice({
+const windowSizeSlice = createSlice({
   name: 'windowsize',
   initialState,
   reducers: {

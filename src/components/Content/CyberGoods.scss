@@ -1,8 +1,31 @@
 @import 'CyberContent';
 
+.closesearchcontent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 120px;
+  width: 100%;
+  height: fit-content;
+  font-size: 1.2vw;
+  text-transform: uppercase;
+}
+.faArrowLeft_search {
+  background-color: none;
+  border: none;
+  height: 20px;
+}
+.text_arrow_search {
+  border: none;
+  justify-content: center;
+  margin-bottom: 1px;
+  align-content: center;
+}
 .goodsGrid1 {
   @extend %coontentgrid;
   grid-template-columns: auto auto auto;
+  justify-content: center;
+  margin-top: 10px;
 }
 .image_goods {
   @extend %contentgrid1;
@@ -25,12 +48,30 @@
   margin-top: 16px;
   margin-bottom: 22px;
 }
+.notfound {
+  position: static;
+  display: flex;
+  width: 100%;
+  height: 40vw;
+  font-size: 2vw;
+  justify-content: center;
+}
+.notfound_text {
+  padding-top: 30vh;
+}
 @media (max-width: 1025px) {
   .goodstext {
     font-size: 2vw;
   }
   .image_goods {
     width: 31vw;
+  }
+  .closesearchcontent {
+    font-size: 1.6vw;
+  }
+  .notfound {
+    height: 76vh;
+    font-size: 4vw;
   }
 }
 @media (max-width: 769px) {
@@ -43,10 +84,26 @@
   .image_goods {
     width: 46vw;
   }
+  .closesearchcontent {
+    font-size: 2vw;
+    margin-top: 110px;
+  }
+  .notfound {
+    height: 76vh;
+    font-size: 4vw;
+  }
 }
 @media (max-width: 545px) {
   .goodstext {
     font-size: 3vw;
+  }
+  .closesearchcontent {
+    font-size: 2.4vw;
+    margin-top: 105px;
+  }
+  .notfound {
+    height: 76vh;
+    font-size: 6vw;
   }
 }
 @media (max-width: 426px) {
@@ -58,5 +115,27 @@
   }
   .image_goods {
     width: 100%;
+  }
+  .closesearchcontent {
+    margin-top: 105px;
+    font-size: 4vw;
+  }
+  .notfound {
+    height: 76vh;
+    font-size: 8vw;
+  }
+}
+@media (max-width: 321px) {
+  .closesearchcontent {
+    margin-top: 100px;
+  }
+  .notfound {
+    height: 76vh;
+    font-size: 8vw;
+  }
+}
+@media (max-height: 426px) {
+  .notfound_text {
+    padding-top: 26vh;
   }
 }
