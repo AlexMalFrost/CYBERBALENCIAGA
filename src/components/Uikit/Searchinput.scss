@@ -35,7 +35,7 @@
   font-family: 'Times New Roman', Times, serif;
   background-color: white;
   cursor: pointer;
-  font-size: 1.6vw;
+  font-size: 20px;
   padding-top: 20px;
 }
 .search_image {
@@ -92,9 +92,25 @@ input:-webkit-autofill {
   .uisearchcomponent {
     top: 60px;
   }
+  .search_text_result {
+    font-size: 2.8vw;
+  }
+}
+@media (max-width: 597px) {
+  .search_text_result {
+    font-size: 2.6vw;
+  }
+}
+@media (max-width: 426px) {
+  .search_text_result {
+    font-size: 2.6vw;
+  }
 }
 @media (max-width: 376px) {
   .uisearchcomponent {
     top: 16vw;
+  }
+  .search_text_result {
+    font-size: 3vw;
   }
 }

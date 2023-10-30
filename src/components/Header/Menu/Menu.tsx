@@ -10,12 +10,15 @@ import { faArrowTurnRight } from '@fortawesome/free-solid-svg-icons';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { winSatte } from '../../../redux/reducers';
 import { setSearch } from '../../../redux/reducers/searchReducer';
+import { setSwitcher } from '../../../redux/reducers/searchSwitcher';
 
 const Menu: React.FC = () => {
   const [see, setNotSee] = React.useState(true);
   const count = useSelector((stat: winSatte) => stat.navdropswitcher.value);
   const windowSize = useSelector((state: winSatte) => state.windowsize.value);
   const dispatch = useDispatch();
+
+  console.log(count);
 
   const dataNavB: { [key: string]: string[] } = dataNav.datam;
 
@@ -26,8 +29,9 @@ const Menu: React.FC = () => {
     setNotSee(false);
   };
   const handleMenuOverNow = (e: string) => {
+    dispatch(setSwitcher(false));
     dispatch(setSearch(e));
-    setNotSee(false);
+    setNotSee(!see);
     dispatch(changeNavDropState('none'));
     dispatch(setWindowSize(false));
   };

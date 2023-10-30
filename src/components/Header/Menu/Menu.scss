@@ -124,10 +124,16 @@ ul::-webkit-scrollbar {
   .ul_menu_header {
     max-height: 264px;
   }
+  .ul_menu_header_item {
+    max-height: 232px;
+  }
 }
 @media (max-height: 438px) {
   .ul_menu_header {
-    max-height: 188px;
+    max-height: 198px;
+  }
+  .ul_menu_header_item {
+    max-height: 232px;
   }
 }
 @media (max-height: 370px) {

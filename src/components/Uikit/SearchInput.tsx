@@ -62,7 +62,6 @@ const SearchInput = () => {
 
   function updateSearchValue(str: string) {
     dispatch(setSearch(str));
-    console.log(str);
     setQuery('');
   }
 

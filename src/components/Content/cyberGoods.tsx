@@ -59,8 +59,6 @@ const CyberGoods = () => {
     fetchPizza();
   }, [searchGoods]);
 
-  console.log(searchGoods);
-
   const renderSkeleton = () => {
     setTimeout(() => {
       setNotFound(true);
