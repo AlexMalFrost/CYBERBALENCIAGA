@@ -9,6 +9,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { winSatte } from '../../../redux/reducers';
 import { setSwitcher } from '../../../redux/reducers/searchSwitcher';
+import { setLogSwitcher } from '../../../redux/reducers/searchSwitcher';
+import { setSearch } from '../../../redux/reducers/searchReducer';
+import Login from '../../Uikit/Login';
 
 import './NavBar.scss';
 
@@ -16,11 +19,13 @@ const NavBar = () => {
   const [storeState, setStoreState] = React.useState(false);
   const NavDropSwitcher = useSelector((stat: winSatte) => stat.navdropswitcher.value);
   const windowSize = useSelector((state: winSatte) => state.windowsize.value);
+  const loginSwitcher = useSelector((state: winSatte) => state.searchswitcher.logvalue);
   const dispatch = useDispatch();
 
   const navStoreState = () => {
     dispatch(setWindowSize(!windowSize));
     setStoreState(!storeState);
+    dispatch(setLogSwitcher(false));
   };
 
   const timerRef = React.useRef<ReturnType<typeof setInterval> | null>(null);
@@ -38,6 +43,7 @@ const NavBar = () => {
   };
 
   const searchSwitcherHeader = () => {
+    dispatch(setSearch('false'));
     dispatch(setSwitcher(false));
   };
 
@@ -77,14 +83,18 @@ const NavBar = () => {
         </div>
         <div>
           <ul className="navbox">
-            {dataNav['iitems'].slice(4, 7).map((item) => (
+            {dataNav['iitems'].slice(4, 6).map((item) => (
               <li key={item}>
                 <p className="navbar_p">{item}</p>
               </li>
             ))}
+            <li onClick={() => dispatch(setLogSwitcher(!loginSwitcher))}>
+              <p className="navbar_p">Login</p>
+            </li>
           </ul>
         </div>
       </div>
+      <Login />
     </>
   );
 };

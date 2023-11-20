@@ -2,6 +2,18 @@
 .navBarDropBar {
   display: flex;
 }
+@mixin arrow-button {
+  border: none;
+  background-color: white;
+}
+@mixin arrowicon_navdrop {
+  background-color: white;
+  color: dimgray;
+  border: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 30px;
+}
 .navdrop_show {
   position: absolute;
   background-color: white;
@@ -28,16 +40,10 @@
   padding-bottom: 48px;
 }
 .arrow-button {
-  border: none;
-  background-color: white;
+  @include arrow-button;
 }
 .arrow-icon_navdrop {
-  background-color: white;
-  color: dimgray;
-  border: none;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  font-size: 30px;
+  @include arrowicon_navdrop;
 }
 .arrow-icon_navdrop:hover {
   color: #0082e6;

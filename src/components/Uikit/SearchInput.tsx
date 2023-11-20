@@ -9,6 +9,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
+type searchItem = {
+  value: string;
+  link: string;
+  price: number;
+  category: string;
+  test: string;
+};
+
 const SearchInput = () => {
   const windowSize = useSelector((state: winSatte) => state.windowsize.value);
   const [searchData, setSearchData] = React.useState([]);
@@ -38,7 +46,6 @@ const SearchInput = () => {
       setSlide(slide + 1);
     }
   };
-
   React.useEffect(() => {
     const timeoutId = setTimeout(() => {
       async function fetchPizza() {
@@ -84,7 +91,7 @@ const SearchInput = () => {
                 <></>
               )}
               <div className="search_result">
-                {searchData.slice(slide, slide + searchSize).map((item: any) => (
+                {searchData.slice(slide, slide + searchSize).map((item: searchItem) => (
                   <li key={item.value}>
                     <div className="search_image">
                       <img className="search_image_result" src={item.link} alt="Link" />

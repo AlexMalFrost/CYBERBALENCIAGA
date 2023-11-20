@@ -5,7 +5,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { winSatte } from '../../redux/reducers';
 import axios from 'axios';
-import SkeletonGoods from './SkeletonGoods';
+import SkeletonGoods from '../Uikit/SkeletonGoods';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 let widowsize = 3;
 if (window.innerWidth < 769) {
@@ -31,11 +32,11 @@ type dressesContent = {
 }[];
 
 const CyberGoods = () => {
-  //const [dressSwitcher, setDressSwitcher] = React.useState(false);
-  const [dressesContent, setDressesContent] = React.useState<dressesContent>([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [dressesContent, setDressesContent] = React.useState<dressesContent>(prerenderArray);
   const [goodsData, setGoodsData] = React.useState(widowsize);
-  const [images, setImages] = React.useState(prerenderArray.slice(0, goodsData));
-  const [notFound, setNotFound] = React.useState(false);
+  const [images, setImages] = React.useState(dressesContent.slice(0, goodsData));
+  const navigate = useNavigate();
 
   const windowSize = useSelector((state: winSatte) => state.windowsize.value);
   const searchGoods = useSelector((state: winSatte) => state.searchslice.value);
@@ -48,9 +49,16 @@ const CyberGoods = () => {
         const { data } = await axios.get(
           `https://6429b940ebb1476fcc4f9b86.mockapi.io/items?${searchh}`,
         );
-        setDressesContent(data);
-        setImages(data.slice(0, goodsData));
-        //setDressSwitcher(true);
+        if (data.length > 0 && data !== dressesContent) {
+          setDressesContent(data);
+          setImages(data.slice(0, goodsData));
+        } else {
+          setDressesContent(prerenderArray);
+          setImages([]);
+        }
+        if (searchGoods !== searchParams.get('searchGoods')) {
+          setSearchParams({ searchGoods });
+        }
       } catch (error) {
         alert('Ошибка при получении данных!');
       }
@@ -60,10 +68,7 @@ const CyberGoods = () => {
   }, [searchGoods]);
 
   const renderSkeleton = () => {
-    setTimeout(() => {
-      setNotFound(true);
-    }, 1000);
-    if (notFound === false) {
+    if (dressesContent.length === prerenderArray.length && images.length > 0) {
       return (
         <>
           <div>
@@ -78,10 +83,6 @@ const CyberGoods = () => {
       </div>
     );
   };
-
-  if (!dressesContent) {
-    return <>Loading...</>;
-  }
 
   const fetchMoreData = () => {
     setTimeout(() => {
@@ -116,7 +117,7 @@ const CyberGoods = () => {
             next={fetchMoreData}
             hasMore={true}
             loader={<div></div>}>
-            {dressesContent.length === 0
+            {dressesContent.length === prerenderArray.length
               ? renderSkeleton()
               : images.map((item) => (
                   <div key={item.value} className="goods_up">
