@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/CYBERBALENCIAGA/static/css/main.b7f09bb5.css",
-    "main.js": "/CYBERBALENCIAGA/static/js/main.9e4a39fd.js",
-    "static/css/943.7fc5831a.chunk.css": "/CYBERBALENCIAGA/static/css/943.7fc5831a.chunk.css",
-    "static/js/943.c0b4f5cb.chunk.js": "/CYBERBALENCIAGA/static/js/943.c0b4f5cb.chunk.js",
-    "static/css/631.3634830c.chunk.css": "/CYBERBALENCIAGA/static/css/631.3634830c.chunk.css",
-    "static/js/631.be1e01eb.chunk.js": "/CYBERBALENCIAGA/static/js/631.be1e01eb.chunk.js",
-    "static/js/787.0c883dd9.chunk.js": "/CYBERBALENCIAGA/static/js/787.0c883dd9.chunk.js",
+    "main.css": "/CYBERBALENCIAGA/static/css/main.bc1c9097.css",
+    "main.js": "/CYBERBALENCIAGA/static/js/main.03236d2a.js",
+    "static/css/943.b47eb752.chunk.css": "/CYBERBALENCIAGA/static/css/943.b47eb752.chunk.css",
+    "static/js/943.f157dcbf.chunk.js": "/CYBERBALENCIAGA/static/js/943.f157dcbf.chunk.js",
+    "static/css/631.556955d8.chunk.css": "/CYBERBALENCIAGA/static/css/631.556955d8.chunk.css",
+    "static/js/631.e344f664.chunk.js": "/CYBERBALENCIAGA/static/js/631.e344f664.chunk.js",
+    "static/js/787.03779cc9.chunk.js": "/CYBERBALENCIAGA/static/js/787.03779cc9.chunk.js",
     "index.html": "/CYBERBALENCIAGA/index.html",
-    "main.b7f09bb5.css.map": "/CYBERBALENCIAGA/static/css/main.b7f09bb5.css.map",
-    "main.9e4a39fd.js.map": "/CYBERBALENCIAGA/static/js/main.9e4a39fd.js.map",
-    "943.7fc5831a.chunk.css.map": "/CYBERBALENCIAGA/static/css/943.7fc5831a.chunk.css.map",
-    "943.c0b4f5cb.chunk.js.map": "/CYBERBALENCIAGA/static/js/943.c0b4f5cb.chunk.js.map",
-    "631.3634830c.chunk.css.map": "/CYBERBALENCIAGA/static/css/631.3634830c.chunk.css.map",
-    "631.be1e01eb.chunk.js.map": "/CYBERBALENCIAGA/static/js/631.be1e01eb.chunk.js.map",
-    "787.0c883dd9.chunk.js.map": "/CYBERBALENCIAGA/static/js/787.0c883dd9.chunk.js.map"
+    "main.bc1c9097.css.map": "/CYBERBALENCIAGA/static/css/main.bc1c9097.css.map",
+    "main.03236d2a.js.map": "/CYBERBALENCIAGA/static/js/main.03236d2a.js.map",
+    "943.b47eb752.chunk.css.map": "/CYBERBALENCIAGA/static/css/943.b47eb752.chunk.css.map",
+    "943.f157dcbf.chunk.js.map": "/CYBERBALENCIAGA/static/js/943.f157dcbf.chunk.js.map",
+    "631.556955d8.chunk.css.map": "/CYBERBALENCIAGA/static/css/631.556955d8.chunk.css.map",
+    "631.e344f664.chunk.js.map": "/CYBERBALENCIAGA/static/js/631.e344f664.chunk.js.map",
+    "787.03779cc9.chunk.js.map": "/CYBERBALENCIAGA/static/js/787.03779cc9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b7f09bb5.css",
-    "static/js/main.9e4a39fd.js"
+    "static/css/main.bc1c9097.css",
+    "static/js/main.03236d2a.js"
   ]
 }
