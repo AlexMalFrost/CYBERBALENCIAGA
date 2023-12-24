@@ -1,0 +1,146 @@
+%navbartextmenu {
+  color: rgb(203, 203, 203);
+  text-shadow: 0 0 1.7px black, 0 0 1.7px black, 0 0 1.7px black, 0 0 1.7px black;
+  font-size: 20px;
+  cursor: pointer;
+}
+%navposition {
+  position: fixed;
+  padding-top: 10px;
+  width: 100%;
+}
+%navbarbox {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  text-transform: uppercase;
+}
+.navheader {
+  z-index: 1;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  @extend %navposition;
+}
+.navbox {
+  @extend %navbarbox;
+  padding-left: 10px;
+}
+.checknavheader {
+  z-index: 1;
+}
+.navbar_p {
+  @extend %navbartextmenu;
+  margin: 0px 16px;
+  transition: all 0.5s ease;
+}
+
+.logo {
+  display: inline-block;
+  color: dimgray;
+  text-shadow: 2px 1px 1px #332c2c;
+  font-size: 2.3vw;
+  font-weight: bold;
+  cursor: pointer;
+}
+.centralbox {
+  position: relative;
+  bottom: 2px;
+  right: 7.8%;
+}
+
+.navbar_p:hover {
+  color: #0082e6;
+}
+.checkbtn {
+  font-size: 20px;
+  margin-left: 32px;
+  cursor: pointer;
+  display: none;
+}
+.navdrophover {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+@media (max-width: 1492px) {
+  .centralbox {
+    right: 12%;
+  }
+  .navbar_p {
+    font-size: 1.5vw;
+  }
+}
+@media (max-width: 1410px) {
+  .navbar_p {
+    font-size: 1.6vw;
+    margin: 0px 10px;
+  }
+  .logo {
+    font-size: 2.6vw;
+  }
+  .centralbox {
+    right: 12%;
+    bottom: 1px;
+  }
+}
+@media (max-width: 1200px) {
+  .navbar_p {
+    font-size: 18px;
+    margin: 0px 8px;
+  }
+  .centralbox {
+    right: 9%;
+    bottom: 1px;
+  }
+}
+@media (max-width: 1100px) {
+  .navbar_p {
+    font-size: 18px;
+    margin: 0px 6px;
+  }
+  .logo {
+    font-size: 2.8vw;
+    margin-bottom: 2px;
+  }
+  .centralbox {
+    right: 8%;
+  }
+  .navbox {
+    padding-left: 0px;
+  }
+}
+@media (max-width: 1025px) {
+  .checkbtn {
+    display: block;
+  }
+  .centralbox {
+    right: 7%;
+  }
+  title.logo {
+    font-size: 30px;
+  }
+
+  .navbox {
+    display: none;
+  }
+  .navbar_p:hover {
+    color: #0082e6;
+    transition: 0.2s;
+  }
+  #check:checked ~ ul {
+    left: 0;
+  }
+}
+@media (max-width: 426px) {
+  title.logo {
+    font-size: 7vw;
+  }
+  .checkbtn {
+    font-size: 5vw;
+  }
+  .centralbox {
+    right: 7%;
+  }
+}
