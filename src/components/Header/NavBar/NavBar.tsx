@@ -11,6 +11,7 @@ import { winSatte } from '../../../redux/reducers';
 import { setSwitcher } from '../../../redux/reducers/searchSwitcher';
 import { setLogSwitcher } from '../../../redux/reducers/searchSwitcher';
 import { setSearch } from '../../../redux/reducers/searchReducer';
+import { setItem } from '../../../redux/reducers/itemReducer';
 import Login from '../../Uikit/Login';
 
 import './NavBar.scss';
@@ -21,6 +22,7 @@ const NavBar = () => {
   const windowSize = useSelector((state: winSatte) => state.windowsize.value);
   const loginSwitcher = useSelector((state: winSatte) => state.searchswitcher.logvalue);
   const dispatch = useDispatch();
+  const windowdata = window.innerWidth;
 
   const navStoreState = () => {
     dispatch(setWindowSize(!windowSize));
@@ -45,13 +47,14 @@ const NavBar = () => {
   const searchSwitcherHeader = () => {
     dispatch(setSearch('false'));
     dispatch(setSwitcher(false));
+    dispatch(setItem('00000'));
   };
 
   React.useEffect(() => {
-    if (window.innerWidth < 1025) {
+    if (windowdata < 1025) {
       dispatch(changeNavDropState(''));
     }
-  }, [window.innerWidth]);
+  }, [windowdata, dispatch]);
 
   return (
     <>
@@ -83,7 +86,12 @@ const NavBar = () => {
         </div>
         <div>
           <ul className="navbox">
-            {dataNav['iitems'].slice(4, 6).map((item) => (
+            <Link to={'/CYBERBALENCIAGA/CART'}>
+              <li>
+                <p className="navbar_p">BASKET</p>
+              </li>
+            </Link>
+            {dataNav['iitems'].slice(5, 6).map((item) => (
               <li key={item}>
                 <p className="navbar_p">{item}</p>
               </li>

@@ -24,6 +24,7 @@ const SearchInput = () => {
   const [query, setQuery] = React.useState('');
   const [slide, setSlide] = React.useState(0);
   const [searchSize, setSearchSize] = React.useState(2);
+  const sizedata = window.innerWidth;
 
   React.useEffect(() => {
     if (window.innerWidth < 426) {
@@ -33,7 +34,7 @@ const SearchInput = () => {
     } else if (window.innerWidth > 426) {
       setSearchSize(3);
     }
-  }, [window.innerWidth]);
+  }, [sizedata]);
 
   const sliderLeft = () => {
     if (slide > 0) {
@@ -92,16 +93,12 @@ const SearchInput = () => {
               )}
               <div className="search_result">
                 {searchData.slice(slide, slide + searchSize).map((item: searchItem) => (
-                  <li key={item.value}>
-                    <div className="search_image">
-                      <img className="search_image_result" src={item.link} alt="Link" />
-                    </div>
+                  <li key={item.value} onClick={() => updateSearchValue(item.value)}>
                     <Link to={`/CYBERBALENCIAGA/content`}>
-                      <div
-                        className="search_text_result"
-                        onClick={() => updateSearchValue(item.value)}>
-                        {item.value}
+                      <div className="search_image">
+                        <img className="search_image_result" src={item.link} alt="Link" />
                       </div>
+                      <div className="search_text_result">{item.value}</div>
                     </Link>
                   </li>
                 ))}

@@ -52,7 +52,10 @@ export const NavDrop: React.FC<NavDropProps> = ({ prop }) => {
                 </button>
                 {dataNavB[val].slice(slide, slide + 5).map((item) => (
                   <li key={item}>
-                    <Link to={`/CYBERBALENCIAGA/content`}>
+                    <Link
+                      to={`/CYBERBALENCIAGA/content/${item
+                        .replace(/ /g, '_')
+                        .replace(/_-_/g, '-')}`}>
                       <p className="navdrop_p" onClick={() => navDropSearchValue(item)}>
                         {item.replace('_', ' ')}
                       </p>

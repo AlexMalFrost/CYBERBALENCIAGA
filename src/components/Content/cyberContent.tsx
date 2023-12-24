@@ -1,8 +1,13 @@
 import './CyberContent.scss';
 import { useSelector } from 'react-redux';
 import { winSatte } from '../../redux/reducers';
+import React from 'react';
 
 const CyberContent = () => {
+  React.useEffect(() => {
+    document.title = 'CYBERBALENCIAGA';
+  }, []);
+
   const windowSize = useSelector((state: winSatte) => state.windowsize.value);
   return (
     <div className={windowSize ? 'contentGrid_blur' : 'contentGrid'}>

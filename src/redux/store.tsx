@@ -3,6 +3,7 @@ import counterReducer from './reducers/counterSlice';
 import windowSizeReducer from './reducers/windowSize';
 import searchSlice from './reducers/searchReducer';
 import searchSwitcher from './reducers/searchSwitcher';
+import itemSlice from './reducers/itemReducer';
 import {
   persistStore,
   persistReducer,
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
   windowsize: windowSizeReducer,
   searchslice: searchSlice,
   searchswitcher: searchSwitcher,
+  itemslice: itemSlice,
 });
 
 const persistConfig = {

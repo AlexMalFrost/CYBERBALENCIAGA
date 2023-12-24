@@ -2,11 +2,12 @@ import './CyberContent.scss';
 import './CyberGoods.scss';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { winSatte } from '../../redux/reducers';
+import { setItem } from '../../redux/reducers/itemReducer';
 import axios from 'axios';
 import SkeletonGoods from '../Uikit/SkeletonGoods';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 let widowsize = 3;
 if (window.innerWidth < 769) {
@@ -21,6 +22,7 @@ const prerenderArray = [
     link: 'https://raw.githubusercontent.com/AlexMalFrost/CYBERBALENCIAGA/cyber-balenciaga-files/goods/strangemask.png',
     price: 99,
     category: 'dress',
+    id: '1',
   },
 ];
 
@@ -29,35 +31,38 @@ type dressesContent = {
   link: string;
   price: number;
   category: string;
-}[];
+  id: string;
+};
+
+type dressesContents = dressesContent[];
 
 const CyberGoods = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const [dressesContent, setDressesContent] = React.useState<dressesContent>(prerenderArray);
+  const [dressesContent, setDressesContent] = React.useState<dressesContents>(prerenderArray);
   const [goodsData, setGoodsData] = React.useState(widowsize);
   const [images, setImages] = React.useState(dressesContent.slice(0, goodsData));
-  const navigate = useNavigate();
 
+  const params = useParams();
   const windowSize = useSelector((state: winSatte) => state.windowsize.value);
-  const searchGoods = useSelector((state: winSatte) => state.searchslice.value);
+  const searchData = useSelector((state: winSatte) => state.searchslice.value);
+  const searchGoods = params.contentpage ? params.contentpage : searchData;
   const searchswitcher = useSelector((state: winSatte) => state.searchswitcher.value);
+  const dispatch = useDispatch();
 
   React.useEffect(() => {
     async function fetchPizza() {
       try {
-        const searchh = searchGoods ? `&search=${searchGoods}` : '';
+        const searchh = searchGoods ? `&search=${searchGoods}` : ' ';
         const { data } = await axios.get(
           `https://6429b940ebb1476fcc4f9b86.mockapi.io/items?${searchh}`,
         );
         if (data.length > 0 && data !== dressesContent) {
           setDressesContent(data);
           setImages(data.slice(0, goodsData));
+          document.title = 'CYBERBALENCIAGA' + '   ' + searchGoods.toUpperCase();
         } else {
+          document.title = 'CYBERBALENCIAGA NOT FOUND';
           setDressesContent(prerenderArray);
           setImages([]);
-        }
-        if (searchGoods !== searchParams.get('searchGoods')) {
-          setSearchParams({ searchGoods });
         }
       } catch (error) {
         alert('Ошибка при получении данных!');
@@ -65,7 +70,7 @@ const CyberGoods = () => {
     }
 
     fetchPizza();
-  }, [searchGoods]);
+  }, [searchGoods, params]);
 
   const renderSkeleton = () => {
     if (dressesContent.length === prerenderArray.length && images.length > 0) {
@@ -100,6 +105,25 @@ const CyberGoods = () => {
     }, 600);
   };
 
+  function updateSearchItem(str: string) {
+    dispatch(setItem(str));
+  }
+
+  const renderItem = (item: dressesContent) => {
+    const itemLink = item.id;
+    return (
+      <div key={item.id} className="goods_up" onClick={() => updateSearchItem(item.id)}>
+        <Link to={`/CYBERBALENCIAGA/${itemLink}`}>
+          <img className="image_goods" src={item.link} alt="Link" />
+          <div className="goodstext">
+            {item.value}
+            <div>{item.price}</div>
+          </div>
+        </Link>
+      </div>
+    );
+  };
+
   return (
     <div>
       <div className={windowSize ? 'goodsGrid_blur' : 'goodsGrid'}>
@@ -119,15 +143,7 @@ const CyberGoods = () => {
             loader={<div></div>}>
             {dressesContent.length === prerenderArray.length
               ? renderSkeleton()
-              : images.map((item) => (
-                  <div key={item.value} className="goods_up">
-                    <img className="image_goods" src={item.link} alt="Link" />
-                    <div className="goodstext">
-                      {item.value}
-                      <div>{item.price}</div>
-                    </div>
-                  </div>
-                ))}
+              : images.map((item) => renderItem(item))}
           </InfiniteScroll>
         </div>
       </div>

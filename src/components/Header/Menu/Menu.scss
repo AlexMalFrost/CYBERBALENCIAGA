@@ -37,6 +37,7 @@
 }
 .ul_menu_header::-webkit-scrollbar {
   display: none;
+  scrollbar-width: none;
   &_item::-webkit-scrollbar {
     display: none;
   }
@@ -68,7 +69,8 @@
 }
 .menu_p {
   cursor: pointer;
-  color: black;
+  color: rgb(192, 192, 192);
+  text-shadow: 0 0 2.7px black, 0 0 2.7px black, 0 0 1.7px black, 0 0 1.7px black;
 }
 @media (max-width: 1024px) {
   .menu_button_back {

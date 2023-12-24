@@ -1,42 +1,50 @@
 import React from 'react';
 import './App.css';
 import Home from './pages/Home/Home';
-import { Routes, Route, useSearchParams } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { setWindowSize } from './redux/reducers/windowSize';
 import { lazy, Suspense } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { winSatte } from './redux/reducers';
-import { setSearch } from './redux/reducers/searchReducer';
+import { useDispatch } from 'react-redux';
 
 function App() {
   const dispatch = useDispatch();
   const [width, setWidth] = React.useState(window.innerWidth);
-  const [searchParams, setSearchParams] = useSearchParams();
   const Goods = lazy(() => import('./pages/Goods/Goods'));
-  const searchGoods = useSelector((state: winSatte) => state.searchslice.value);
-
-  React.useEffect(() => {
-    if (window.location.search && searchGoods !== searchParams.get('searchGoods')) {
-      dispatch(setSearch(searchParams.get('searchGoods')));
-    }
-  }, []);
+  const Item = lazy(() => import('./pages/Item/Item'));
+  const Cart = lazy(() => import('./pages/Cart/Cart'));
 
   React.useEffect(() => {
     window.addEventListener('resize', () => setWidth(window.innerWidth));
     if (window.innerWidth > 1025) {
       dispatch(setWindowSize(false));
     }
-  }, [width]);
+  }, [dispatch, width]);
   return (
     <Routes>
       <Route path="/" element={<Home />}>
         <Route path="/CYBERBALENCIAGA" element={<Home />} />
       </Route>
       <Route
-        path="/CYBERBALENCIAGA/content"
+        path="/CYBERBALENCIAGA/content/:contentpage"
         element={
           <Suspense fallback={<p>Loading...</p>}>
             <Goods />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/CYBERBALENCIAGA/:itempage"
+        element={
+          <Suspense fallback={<p>Loading...</p>}>
+            <Item />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/CYBERBALENCIAGA/CART"
+        element={
+          <Suspense fallback={<p>Loading...</p>}>
+            <Cart />
           </Suspense>
         }
       />

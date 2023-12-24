@@ -86,11 +86,14 @@ const Menu: React.FC = () => {
                       </a>
                     </div>
                   ))}
-                  {dataNavC.slice(4, 6).map((item) => (
-                    <div className="li_menu_header" key={item}>
-                      <a className="menu_p">{item}</a>
-                    </div>
-                  ))}
+                  <div className="li_menu_header">
+                    <Link to={'/CYBERBALENCIAGA/CART'}>
+                      <a className="menu_p">Basket</a>
+                    </Link>
+                  </div>
+                  <div className="li_menu_header">
+                    <a className="menu_p">PROSTHESIS REPAIR</a>
+                  </div>
                   <div className="li_menu_header" onClick={() => loginSwitcherMenu()}>
                     <a className="menu_p">Login</a>
                   </div>
@@ -108,7 +111,10 @@ const Menu: React.FC = () => {
                       }>
                       {dataNavB[val].map((item: string) => (
                         <div key={item}>
-                          <Link to={`/CYBERBALENCIAGA/content`}>
+                          <Link
+                            to={`/CYBERBALENCIAGA/content/${item
+                              .replace(/ /g, '_')
+                              .replace(/_-_/g, '-')}`}>
                             <p className="menu_p" onClick={() => handleMenuOverNow(item)}>
                               {item.replace('_', ' ')}
                             </p>
