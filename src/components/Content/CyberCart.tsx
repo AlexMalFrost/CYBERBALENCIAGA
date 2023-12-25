@@ -59,7 +59,6 @@ const CyberCart: React.FC = () => {
   const cartItems = useSelector((state: winSatte) => state.searchslice.cartvalue);
 
   React.useEffect(() => {
-    console.log(cartContent[0].id);
     async function fetchPizza() {
       try {
         const { data } = await axios.get(`https://6429b940ebb1476fcc4f9b86.mockapi.io/items`);
