@@ -1,27 +1,27 @@
 {
   "files": {
     "main.css": "/CYBERBALENCIAGA/static/css/main.bc1c9097.css",
-    "main.js": "/CYBERBALENCIAGA/static/js/main.a3fe128e.js",
+    "main.js": "/CYBERBALENCIAGA/static/js/main.6a4caf7a.js",
     "static/css/943.b47eb752.chunk.css": "/CYBERBALENCIAGA/static/css/943.b47eb752.chunk.css",
     "static/js/943.1417bdc9.chunk.js": "/CYBERBALENCIAGA/static/js/943.1417bdc9.chunk.js",
     "static/css/631.d1004b17.chunk.css": "/CYBERBALENCIAGA/static/css/631.d1004b17.chunk.css",
-    "static/js/631.95131c97.chunk.js": "/CYBERBALENCIAGA/static/js/631.95131c97.chunk.js",
+    "static/js/631.61707229.chunk.js": "/CYBERBALENCIAGA/static/js/631.61707229.chunk.js",
     "static/css/720.5d27341f.chunk.css": "/CYBERBALENCIAGA/static/css/720.5d27341f.chunk.css",
     "static/js/720.d5fa62d9.chunk.js": "/CYBERBALENCIAGA/static/js/720.d5fa62d9.chunk.js",
     "static/js/787.03779cc9.chunk.js": "/CYBERBALENCIAGA/static/js/787.03779cc9.chunk.js",
     "index.html": "/CYBERBALENCIAGA/index.html",
     "main.bc1c9097.css.map": "/CYBERBALENCIAGA/static/css/main.bc1c9097.css.map",
-    "main.a3fe128e.js.map": "/CYBERBALENCIAGA/static/js/main.a3fe128e.js.map",
+    "main.6a4caf7a.js.map": "/CYBERBALENCIAGA/static/js/main.6a4caf7a.js.map",
     "943.b47eb752.chunk.css.map": "/CYBERBALENCIAGA/static/css/943.b47eb752.chunk.css.map",
     "943.1417bdc9.chunk.js.map": "/CYBERBALENCIAGA/static/js/943.1417bdc9.chunk.js.map",
     "631.d1004b17.chunk.css.map": "/CYBERBALENCIAGA/static/css/631.d1004b17.chunk.css.map",
-    "631.95131c97.chunk.js.map": "/CYBERBALENCIAGA/static/js/631.95131c97.chunk.js.map",
+    "631.61707229.chunk.js.map": "/CYBERBALENCIAGA/static/js/631.61707229.chunk.js.map",
     "720.5d27341f.chunk.css.map": "/CYBERBALENCIAGA/static/css/720.5d27341f.chunk.css.map",
     "720.d5fa62d9.chunk.js.map": "/CYBERBALENCIAGA/static/js/720.d5fa62d9.chunk.js.map",
     "787.03779cc9.chunk.js.map": "/CYBERBALENCIAGA/static/js/787.03779cc9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bc1c9097.css",
-    "static/js/main.a3fe128e.js"
+    "static/js/main.6a4caf7a.js"
   ]
 }
