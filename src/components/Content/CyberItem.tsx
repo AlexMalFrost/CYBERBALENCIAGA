@@ -35,7 +35,7 @@ const CyberItem = () => {
   const [itemContent, setItemContent] = React.useState<dressesContent>(prerenderArray);
   const searchData = useSelector((state: winSatte) => state.itemslice.value);
   const windowSize = useSelector((state: winSatte) => state.windowsize.value);
-  const cartItems = useSelector((state: winSatte) => state.searchslice.cartvalue);
+  const cartItems = useSelector((state: winSatte) => state.searchreducer.cartvalue);
   const searchItem = params.itempage ? params.itempage : searchData;
 
   React.useEffect(() => {
@@ -60,7 +60,8 @@ const CyberItem = () => {
   }, [searchItem]);
 
   function updateCart(item: dressesContents) {
-    if (Object.keys(cartItems).length > 0) {
+    const length = Object.keys(cartItems).length;
+    if (length > 0) {
       dispatch(setCart([...cartItems, { id: item.id }]));
     } else {
       dispatch(setCart([{ id: item.id }]));

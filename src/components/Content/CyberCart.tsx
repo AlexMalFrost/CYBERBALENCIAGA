@@ -56,22 +56,21 @@ const CyberCart: React.FC = () => {
 
   const dispatch = useDispatch();
   const windowSize = useSelector((state: winSatte) => state.windowsize.value);
-  const cartItems = useSelector((state: winSatte) => state.searchslice.cartvalue);
+  const cartItems = useSelector((state: winSatte) => state.searchreducer.cartvalue);
+  const lelength = Object.keys(cartItems).length;
 
   React.useEffect(() => {
     async function fetchPizza() {
       try {
         const { data } = await axios.get(`https://6429b940ebb1476fcc4f9b86.mockapi.io/items`);
-        if (data.length > 0 && Object.keys(cartItems).length > 0) {
-          const myArrayFiltered = data.filter((el: cartContent) => {
-            return cartItems.some((f: cartItem) => {
-              return f.id == el.id;
-            });
-          });
-          setCartContent(myArrayFiltered);
-        } else if (data.length === 0 && Object.keys(cartItems).length > 0) {
+        if (lelength === 1 && cartItems[0].id === '0000000') {
           document.title = 'CYBERBALENCIAGA NOT FOUND';
-          setCartContent(NotFound);
+          setCartContent(prerenderArray);
+        } else if (lelength > 0) {
+          const myArrayFiltered = data.filter((ad: cartContent) =>
+            cartItems.some((fd) => ad.id == fd.id),
+          );
+          setCartContent(myArrayFiltered);
         } else {
           document.title = 'CYBERBALENCIAGA NOT FOUND';
           setCartContent(prerenderArray);
@@ -85,7 +84,7 @@ const CyberCart: React.FC = () => {
   }, [cartItems]);
 
   const itemCarts: cartValue =
-    Object.keys(cartItems).length > 0
+    lelength > 0
       ? [
           ...cartItems
             .reduce((mp, o) => {
@@ -95,7 +94,15 @@ const CyberCart: React.FC = () => {
             }, new Map())
             .values(),
         ]
-      : prerenderArray;
+      : [
+          ...prerenderArray
+            .reduce((mp, o) => {
+              if (!mp.has(o.id)) mp.set(o.id, { ...o, count: 0 });
+              mp.get(o.id).count++;
+              return mp;
+            }, new Map())
+            .values(),
+        ];
 
   const removeCartItem = ({ item, datavalue }: cartContentItem) => {
     if (datavalue > 1) {
@@ -106,7 +113,7 @@ const CyberCart: React.FC = () => {
   };
 
   const removeCartPosition = (item: cartContent) => {
-    if (Object.keys(cartItems).length > 0) {
+    if (lelength > 0) {
       const removethisposition = cartItems.filter((i) => i.id !== item.id);
       const removeposition = cartContent.filter((i) => i.id !== item.id);
       const filteredCartItem = removeposition.filter(
@@ -120,7 +127,7 @@ const CyberCart: React.FC = () => {
   };
 
   const renderItemCartNumber = (item: cartContent) => {
-    for (let i = 0; i < Object.keys(cartItems).length; i++) {
+    for (let i = 0; i < lelength; i++) {
       if (item.id === itemCarts[i].id) {
         const datavalue = itemCarts[i].count;
         return (

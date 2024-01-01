@@ -15,6 +15,7 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import searchReducer from './reducers/searchReducer';
 
 const rootReducer = combineReducers({
   navdropswitcher: counterReducer,
@@ -22,6 +23,7 @@ const rootReducer = combineReducers({
   searchslice: searchSlice,
   searchswitcher: searchSwitcher,
   itemslice: itemSlice,
+  searchreducer: searchReducer,
 });
 
 const persistConfig = {
