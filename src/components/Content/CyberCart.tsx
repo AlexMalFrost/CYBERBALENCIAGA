@@ -20,16 +20,13 @@ const prerenderArray = [
 const NotFound = [
   {
     value: 'Cyber fighter gloves',
-    id: '99999998',
+    id: '99999999',
     link: 'https://raw.githubusercontent.com/AlexMalFrost/CYBERBALENCIAGA/cyber-balenciaga-files/goods/strangemask.png',
     price: 10101,
     test: 'dresses',
     category: 'dress',
   },
 ];
-type cartItem = {
-  id: string;
-};
 
 type cartValue = {
   count: number;
@@ -64,19 +61,28 @@ const CyberCart: React.FC = () => {
       try {
         const { data } = await axios.get(`https://6429b940ebb1476fcc4f9b86.mockapi.io/items`);
         if (lelength === 1 && cartItems[0].id === '0000000') {
-          document.title = 'CYBERBALENCIAGA NOT FOUND';
+          document.title = 'Cart is empty';
           setCartContent(prerenderArray);
-        } else if (lelength > 0) {
+        } else if (lelength === 0) {
+          document.title = 'Cart is empty';
+          setCartContent(prerenderArray);
+        } else if (lelength > 0 && Object.keys(data).length === 0) {
+          document.title = 'Data not found';
+          setCartContent(NotFound);
+        } else if (lelength > 0 && Object.keys(data).length > 0) {
           const myArrayFiltered = data.filter((ad: cartContent) =>
             cartItems.some((fd) => ad.id == fd.id),
           );
+          document.title = 'Goods to buy';
           setCartContent(myArrayFiltered);
         } else {
-          document.title = 'CYBERBALENCIAGA NOT FOUND';
-          setCartContent(prerenderArray);
+          document.title = 'Data NOT FOUND';
+          setCartContent(NotFound);
         }
       } catch (error) {
-        alert('Ошибка при получении данных!');
+        document.title = 'Can not get data';
+        setCartContent(NotFound);
+        //alert('Ошибка при получении данных!');
       }
     }
 
@@ -170,15 +176,10 @@ const CyberCart: React.FC = () => {
     } else if (cartContent[0].price === NotFound[0].price) {
       return (
         <>
-          <div className="emptycart">Data not found</div>
+          <div className="emptycart">Sorry, data not found</div>
         </>
       );
     }
-    return (
-      <div className="notfound">
-        <div className="notfound_text">Data not found</div>
-      </div>
-    );
   };
 
   return (
