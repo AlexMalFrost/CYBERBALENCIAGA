@@ -28,28 +28,28 @@ const NotFound = [
   },
 ];
 
-type cartValue = {
-  count: number;
+type СartValue = {
   id: string;
+  count: number;
 }[];
 
-type cartContent = {
+type СartContent = {
+  id: string;
   value: string;
   link: string;
   price: number;
   category: string;
-  id: string;
 };
 
-type cartContents = cartContent[];
+type СartContents = СartContent[];
 
-type cartContentItem = {
-  item: cartContent;
+type СartContentItem = {
+  item: СartContent;
   datavalue: number;
 };
 
 const CyberCart: React.FC = () => {
-  const [cartContent, setCartContent] = React.useState<cartContents>(prerenderArray);
+  const [cartContent, setCartContent] = React.useState<СartContents>(prerenderArray);
 
   const dispatch = useDispatch();
   const windowSize = useSelector((state: winSatte) => state.windowsize.value);
@@ -70,7 +70,7 @@ const CyberCart: React.FC = () => {
           document.title = 'Data not found';
           setCartContent(NotFound);
         } else if (lelength > 0 && Object.keys(data).length > 0) {
-          const myArrayFiltered = data.filter((ad: cartContent) =>
+          const myArrayFiltered = data.filter((ad: СartContent) =>
             cartItems.some((fd) => ad.id == fd.id),
           );
           document.title = 'Goods to buy';
@@ -82,14 +82,13 @@ const CyberCart: React.FC = () => {
       } catch (error) {
         document.title = 'Can not get data';
         setCartContent(NotFound);
-        //alert('Ошибка при получении данных!');
       }
     }
 
     fetchPizza();
   }, [cartItems]);
 
-  const itemCarts: cartValue =
+  const itemCarts: СartValue =
     lelength > 0
       ? [
           ...cartItems
@@ -110,7 +109,7 @@ const CyberCart: React.FC = () => {
             .values(),
         ];
 
-  const removeCartItem = ({ item, datavalue }: cartContentItem) => {
+  const removeCartItem = ({ item, datavalue }: СartContentItem) => {
     if (datavalue > 1) {
       const indexCart = cartItems.findIndex(({ id }) => id === item.id);
       const delitItemCart = cartItems.filter((_, i) => i !== indexCart);
@@ -118,7 +117,7 @@ const CyberCart: React.FC = () => {
     }
   };
 
-  const removeCartPosition = (item: cartContent) => {
+  const removeCartPosition = (item: СartContent) => {
     if (lelength > 0) {
       const removethisposition = cartItems.filter((i) => i.id !== item.id);
       const removeposition = cartContent.filter((i) => i.id !== item.id);
@@ -132,7 +131,7 @@ const CyberCart: React.FC = () => {
     }
   };
 
-  const renderItemCartNumber = (item: cartContent) => {
+  const renderItemCartNumber = (item: СartContent) => {
     for (let i = 0; i < lelength; i++) {
       if (item.id === itemCarts[i].id) {
         const datavalue = itemCarts[i].count;
@@ -188,7 +187,7 @@ const CyberCart: React.FC = () => {
         <div className="cart_content">
           {cartContent[0].id === prerenderArray[0].id
             ? renderSkeleton()
-            : cartContent.map((item: cartContent) => (
+            : cartContent.map((item: СartContent) => (
                 <div key={item.id} className="cart_item">
                   <div className="cart_picture_box">
                     <img className="cart_picture" src={item.link} alt="Link" />

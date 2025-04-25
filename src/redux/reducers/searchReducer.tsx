@@ -10,7 +10,7 @@ type searchState = {
 };
 
 const initialState: searchState = {
-  value: '99999998',
+  value: '9999998',
   cartvalue: [{ id: '0000000' }],
 };
 
